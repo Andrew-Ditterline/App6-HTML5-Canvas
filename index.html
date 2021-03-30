@@ -76,6 +76,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<canvas id="main" width="300" height="225" style="border:1px solid #000000;">
 	</canvas>
 	
+	<img id="bevo" width="220" height="277" src="https://pbs.twimg.com/profile_images/883398941898821632/TlLqI4yh.jpg" alt="The Scream" style="display: none;">
+	
 	<script>
 		var canvas = document.getElementById("main");
 		var context = canvas.getContext("2d");
@@ -89,11 +91,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 
 		function loadPicture() {
-			var img = new Image();
-			img.src = 'https://www.gannett-cdn.com/-mm-/e7d6f0973e676eacbda41c592a544bc68b23cf87/c=56-267-3385-2148/local/-/media/2017/04/15/USATODAY/USATODAY/636278904574345581-USATSI-10014740.jpg';
-			img.width = 300;
-			img.height = 225;
-			context.drawImage(img, 0, 0);
+			var img = document.getElementById("bevo");
+			context.drawImage(img, 10, 10, img.width, img.height);
 			document.getElementById("bevo").style.display='block';
 		}
 
