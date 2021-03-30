@@ -82,7 +82,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 	
-	<canvas id="main" width="300" height="225" style="border:1px solid #000000;">
+	<canvas id="main" width="300" height="225" style="border:2px solid #000000;">
 	</canvas>
 </div>
 
@@ -106,12 +106,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 		// Function to load a picture of Bevo
 		function loadPicture() {
-			// Create an image of 280px x 205px
-			var img = new Image(280, 205);
+			// Create an image of size relative to the canvas, but slightly smaller
+			var img = new Image(canvas.width  * .9, canvas.height  * .9);
 			// Set the source of the image
 			img.src = "https://pbs.twimg.com/profile_images/883398941898821632/TlLqI4yh.jpg";
-			// Draw the image with the specified dimensions starting at 10 px from the right and 10px from the top
-			context.drawImage(img, 10, 10, img.width, img.height);
+			// Draw the image with the specified dimensions starting relative to the canvas (5% from each direction)
+			context.drawImage(img, canvas.width  * 0.5, canvas.height  * 0.5, img.width, img.height);
 		}
 		// Function to clear the canvas
 		function clearCanvas() {
@@ -129,7 +129,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 
 <!-- A paragraph to create space at the bottom of the page between the footer and the buttons -->
-<p style="margin-top: 3em;"></p>
+<p style="margin-top: 5em;"></p>
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
