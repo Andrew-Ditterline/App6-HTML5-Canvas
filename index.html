@@ -33,7 +33,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 	
-<img id="bevo" src="https://www.gannett-cdn.com/-mm-/e7d6f0973e676eacbda41c592a544bc68b23cf87/c=56-267-3385-2148/local/-/media/2017/04/15/USATODAY/USATODAY/636278904574345581-USATSI-10014740.jpg" alt="bevo" width="300" height="225">
+<img id="bevo" src="https://www.gannett-cdn.com/-mm-/e7d6f0973e676eacbda41c592a544bc68b23cf87/c=56-267-3385-2148/local/-/media/2017/04/15/USATODAY/USATODAY/636278904574345581-USATSI-10014740.jpg" alt="bevo" width="300" height="225" style="display:none;">
 	
 <script>
 	var docMod = document.lastModified; // loads last modified time stamp into docMod variable
@@ -92,6 +92,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 		function loadPicture() {
 			context.drawImage(bevo, 0, 0);
+			document.getElementById("bevo").style.display='block';
 		}
 
 		function clearCanvas() {
