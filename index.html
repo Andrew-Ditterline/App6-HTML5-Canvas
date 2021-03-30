@@ -33,11 +33,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 	
+<img id="bevo" src="https://www.gannett-cdn.com/-mm-/e7d6f0973e676eacbda41c592a544bc68b23cf87/c=56-267-3385-2148/local/-/media/2017/04/15/USATODAY/USATODAY/636278904574345581-USATSI-10014740.jpg" alt="bevo" width="300" height="225">
 	
 <script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+	var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+	alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+	console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+	
+	var canvas = document.getElementById("main");
+	var context = canvas.getContext("2d");
+	
+	function drawRectangle() {
+		context.fillRect(50, 25, 150, 100);
+	}
+	
+	function writeName() {
+		context.fillText("Logan Ditterline", 150, 112);
+	}
+	
+	function loadPicture() {
+		context.drawImage(bevo, 0, 0);
+	}
+	
+	function clearCanvas() {
+		context.clearRect(0, 0, 300, 225);
+	}
+	
 </script>
 
 
@@ -76,6 +97,11 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	
 	<canvas id="main" width="300" height="225" style="border:1px solid #000000;">
 	</canvas>
+	
+	<a href="#rectangle"  onclick="drawRectangle();" class="w3-btn w3-black">Draw Rectangle</a>
+	<a href="#name"  onclick="writeName();" class="w3-btn w3-black">Write Name</a>
+	<a href="#picture"  onclick="loadPicture();" class="w3-btn w3-black">Load Picture</a>
+	<a href="#clear"  onclick="clearCanvas();" class="w3-btn w3-black">Clear Canvas</a>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
